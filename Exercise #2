@@ -26,3 +26,20 @@ void inserir(list* l, int x)
     }
 
 }
+
+void remove(list *l, int x)
+{
+    list *aux;
+    list *q;
+    list *nova = malloc(sizeof(list));
+    aux = l;
+    if(aux == NULL){
+        printf("Lista Vazia!");
+    }
+    else{
+        
+        aux = aux->prox;
+        l= aux->prox;
+        free(aux);
+    }
+}
