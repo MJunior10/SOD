@@ -1,0 +1,28 @@
+typedef struct lista{
+
+    int conteudo;
+    struct lista prox;
+}list;
+
+
+void inserir(list* l, int x)
+{
+    list *c,*aux, nova;
+
+    nova = malloc(sizeof(list));
+    aux = l;
+    c=l;
+    if(aux == NULL){
+        aux = aux->prox;
+        aux->prox = nova;
+    }else{
+        while(aux->prox != NULL)
+        {
+            aux= aux->prox;
+        }
+        nova->prox = aux->prox;
+        aux->prox = nova;
+        
+    }
+
+}
