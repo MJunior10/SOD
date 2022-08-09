@@ -32,13 +32,12 @@ void remove(list *l, int x)
     list *aux;
     
     list *nova = malloc(sizeof(list));
-    aux = l;
+    aux = l->prox;
     if(aux == NULL){
         printf("Lista Vazia!");
     }
     else{
         
-        aux = aux->prox;
         l= aux->prox;
         free(aux);
     }
