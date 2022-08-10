@@ -1,0 +1,83 @@
+typedef struct lista{
+	
+	int conteudo;
+	struct lista *prox;
+    struct lista *ant;
+}lista;
+
+
+void inserirFim(list *l, int x)
+{
+    list *aux, *nova = malloc(sizeof(list));
+    aux = l;
+    nova->conteudo = x;
+    if(aux == NULL)
+    {
+        aux = novo;
+    }
+    else{
+        while(aux->prox != NULL)
+        {
+            aux = aux->prox;
+        }
+        aux->prox = nova;
+        nova->ant = aux->ant->prox;
+    }
+}
+void inserirInicio(list *l, int x)
+{
+    list *aux, *nova = malloc(sizeof(list));
+    aux = l->prox;
+    nova->conteudo = x;
+    if(aux == NULL)
+    {
+        aux = novo;
+    }
+    else{
+        nova->ant = aux->ant->prox;
+        nova->prox = aux->ant;
+        aux->ant = nova->prox
+        aux->ant->prox = nova;
+        
+
+        
+    }
+}
+
+void removeInicio(list *l)
+{
+    list *aux;
+    aux = l;
+
+    if(aux == NULL)
+    {
+        printf("Lista Vazia");
+    }
+    else
+    {
+        aux=aux->prox;
+        aux->ant->prox = aux->prox;
+        aux->prox->ant = aux->ant;
+        free(aux);
+    }
+
+}
+void removeFim(list *l)
+{
+    list *aux;
+    aux = l;
+
+    if(aux == NULL)
+    {
+        printf("Lista Vazia");
+    }
+    else
+    {
+        while(aux->prox != NULL)
+        {
+            aux = aux->prox;
+        }
+        free(aux);
+    }
+
+}

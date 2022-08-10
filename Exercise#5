@@ -25,7 +25,7 @@ void inserir(list *l, int x)
     }
 }
 
-void remove(list *l, int x)
+void remove(list *l,)
 {
     list *aux;
     aux = l;
